@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YA — Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+  <header class="nav">
+    <a class="brand" href="index.html">YA</a>
+    <a href="index.html">← Store</a>
+  </header>
+
+  <main class="admin-wrap">
+    <div id="loginBox" class="panel small">
+      <p class="eyebrow">PRIVATE AREA</p>
+      <h1>YA Admin</h1>
+      <p>This GitHub Pages version uses browser storage only. It is not a secure server-side admin system.</p>
+      <input id="adminPassword" type="password" placeholder="Admin password">
+      <button class="button full" id="loginBtn">ENTER</button>
+      <small>Demo password: YA2026</small>
+    </div>
+
+    <div id="adminPanel" class="hidden">
+      <div class="admin-head">
+        <div>
+          <p class="eyebrow">CATALOG MANAGER</p>
+          <h1>Add clothing</h1>
+        </div>
+        <button class="button danger" id="resetBtn">Reset demo products</button>
+      </div>
+
+      <form class="panel form" id="productForm">
+        <input name="name" placeholder="Product name" required>
+        <input name="price" placeholder="Price, e.g. 499 MAD" required>
+        <select name="category">
+          <option value="tshirt">T-Shirt</option>
+          <option value="hoodie">Hoodie</option>
+          <option value="jacket">Jacket</option>
+        </select>
+        <input name="sizes" placeholder="Sizes, e.g. S / M / L / XL">
+        <textarea name="description" placeholder="Description"></textarea>
+        <label class="upload">
+          <span>Choose product photo</span>
+          <input name="image" type="file" accept="image/png,image/jpeg,image/webp" required>
+        </label>
+        <button class="button" type="submit">ADD TO THIS BROWSER</button>
+      </form>
+
+      <p class="notice">Important: GitHub Pages is static. Products/photos added here are saved only in this browser using localStorage. They are NOT uploaded to GitHub and other visitors will not see them. For a real multi-admin store, a backend/database is required.</p>
+
+      <div id="adminProducts" class="admin-products"></div>
+    </div>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
